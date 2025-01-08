@@ -48,6 +48,4 @@ export default tseslint.config({
   },
 })
 ```
-"# cms" 
-"# cms" 
 "# ThesisCMS" 
