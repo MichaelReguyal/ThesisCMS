@@ -12,6 +12,7 @@ interface FormData {
     middleName?: string;
     birthDate: string;
     age: number;
+    gender: 'male' | 'female' | 'other';
     sex: 'male' | 'female';
     maritalStatus: 'single' | 'married' | 'divorced' | 'widowed';
     birthPlace: string;
@@ -47,7 +48,8 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
         lastName: '',
         middleName: '',
         birthDate: '',
-        age: 0,,
+        age: 0,
+        gender: 'male',
         sex: 'male',
         maritalStatus: 'single',
         birthPlace: '',
@@ -249,6 +251,21 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                         </div>
 
                         {/* Add these fields after the personal information section and before contact information */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700">Gender *</label>
+                                <select
+                                    name="gender"
+                                    required
+                                    value={formData.gender}
+                                    onChange={handleChange}
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
+                                >
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-700">Sex *</label>
                                 <select
