@@ -12,7 +12,6 @@ interface FormData {
     middleName?: string;
     birthDate: string;
     age: number;
-    gender: 'male' | 'female' | 'other';
     sex: 'male' | 'female';
     maritalStatus: 'single' | 'married' | 'divorced' | 'widowed';
     birthPlace: string;
@@ -48,8 +47,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
         lastName: '',
         middleName: '',
         birthDate: '',
-        age: 0,
-        gender: 'male',
+        age: 0,,
         sex: 'male',
         maritalStatus: 'single',
         birthPlace: '',
@@ -213,7 +211,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     required
                                     value={formData.firstName}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                             <div>
@@ -224,7 +222,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     required
                                     value={formData.lastName}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                             <div>
@@ -234,7 +232,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     name="middleName"
                                     value={formData.middleName || ''}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                             <div>
@@ -245,27 +243,12 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     required
                                     value={formData.birthDate}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                         </div>
 
                         {/* Add these fields after the personal information section and before contact information */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700">Gender *</label>
-                                <select
-                                    name="gender"
-                                    required
-                                    value={formData.gender}
-                                    onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
-                                >
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-700">Sex *</label>
                                 <select
@@ -273,7 +256,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     required
                                     value={formData.sex}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 >
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
@@ -288,7 +271,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     min="0"
                                     value={formData.age}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                         </div>
@@ -301,7 +284,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     required
                                     value={formData.maritalStatus}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 >
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
@@ -317,7 +300,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     required
                                     value={formData.birthPlace}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                         </div>
@@ -332,7 +315,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     required
                                     value={formData.city}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                             <div>
@@ -343,7 +326,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     required
                                     value={formData.state}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                         </div>
@@ -357,7 +340,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     required
                                     value={formData.country}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                             <div>
@@ -368,7 +351,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     required
                                     value={formData.zipCode}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                         </div>
@@ -382,7 +365,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                 value={formData.address}
                                 onChange={handleChange}
                                 rows={2}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                             />
                         </div>
 
@@ -395,7 +378,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     required
                                     value={formData.phoneNumber}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                             <div>
@@ -405,7 +388,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     name="email"
                                     value={formData.email || ''}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                         </div>
@@ -419,7 +402,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     name="lastSchoolAttended"
                                     value={formData.lastSchoolAttended || ''}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                             <div>
@@ -430,7 +413,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                     required
                                     value={formData.gradeToEnroll}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                 />
                             </div>
                         </div>
@@ -447,7 +430,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                         required
                                         value={formData.motherName}
                                         onChange={handleChange}
-                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                     />
                                 </div>
                                 <div>
@@ -458,7 +441,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                         required
                                         value={formData.motherPhoneNumber}
                                         onChange={handleChange}
-                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                     />
                                 </div>
                                 <div className="md:col-span-2">
@@ -468,7 +451,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                         name="motherOccupation"
                                         value={formData.motherOccupation || ''}
                                         onChange={handleChange}
-                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                     />
                                 </div>
                             </div>
@@ -483,7 +466,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                         required
                                         value={formData.fatherName}
                                         onChange={handleChange}
-                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                     />
                                 </div>
                                 <div>
@@ -494,7 +477,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                         required
                                         value={formData.fatherPhoneNumber}
                                         onChange={handleChange}
-                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                     />
                                 </div>
                                 <div className="md:col-span-2">
@@ -504,7 +487,7 @@ const AdmissionForm: React.FC<AdmissionFormProps> = ({ onClose }) => {
                                         name="fatherOccupation"
                                         value={formData.fatherOccupation || ''}
                                         onChange={handleChange}
-                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 text-black"
                                     />
                                 </div>
                             </div>
