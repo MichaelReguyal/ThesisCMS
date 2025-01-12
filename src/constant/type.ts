@@ -1,3 +1,20 @@
+export enum GradeLevel {
+  NURSERY = 'nursery',
+  PRE_KINDER = 'pre-kinder',
+  KINDER = 'kinder',
+  GRADE_1 = 'grade-1',
+  GRADE_2 = 'grade-2',
+  GRADE_3 = 'grade-3',
+  GRADE_4 = 'grade-4',
+  GRADE_5 = 'grade-5',
+  GRADE_6 = 'grade-6',
+  GRADE_7 = 'grade-7',
+  GRADE_8 = 'grade-8',
+  GRADE_9 = 'grade-9',
+  GRADE_10 = 'grade-10',
+  GRADE_11 = 'grade-11',
+  GRADE_12 = 'grade-12'
+}
 
 export type DashBoardData = {
     announcements: Announcement[];
